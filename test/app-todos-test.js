@@ -10,7 +10,7 @@ if (typeof exports !== 'undefined' && this.exports !== exports) {
 	
 	/*
 	 * Here's why the node.js environment needs special
-	 * treatment: 
+	 * treatment:
 	 *
 	 *   -  We need to identify dependencies so node.js
 	 *      can load the necessary libraries. (In the
@@ -114,7 +114,7 @@ describe("Todo List Item View", function() {
 	describe("Template", function() {
 		beforeEach(function(){
 			this.item.render();
-		})	
+		})
 		it("should contain the todo title as text", function() {
 			this.item.$el.text().should.have.string("Todo");
 		})
@@ -131,6 +131,13 @@ describe("Todo List Item View", function() {
 			this.todo.set("complete", true);
 			this.item.render();
 			this.item.$el.find("label>input[type='checkbox']").is(":checked").should.be.true;
+		})
+		it("should protect against XSS attacks on the title", function() {
+  		this.badTodo = new todoApp.Todo({title: "<script>bad</script>"});
+  		this.badItem = new todoApp.TodoListItem({model: this.badTodo});
+  		this.badItem.render();
+  		$("label",this.badItem.$el).html().replace(/<input .*>/,"").trim()
+  		    .should.equal("&lt;script&gt;bad&lt;/script&gt;");
 		})
 	})
 	describe("Model Interaction", function() {
@@ -176,7 +183,7 @@ describe("Todos List View", function() {
 })
 
 /*
- * For extra credit, the following code can be used to 
+ * For extra credit, the following code can be used to
  * test interaction with a REST API. It's not really
  * appropriate for unit tests of the todos module
  * because it's actually testing the backbone library.

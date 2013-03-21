@@ -38,7 +38,7 @@ if (typeof todoApp === "undefined") todoApp = {};
 
 /*
  * The fundamental model for the app is a Todo. The only
- * action supported in this demo is toggling the status 
+ * action supported in this demo is toggling the status
  * (e.g. from pending to complete or vice versa).
  */
  
@@ -90,7 +90,7 @@ todoApp.TodoListItem = Backbone.View.extend({
   template: _.template(
       "<label>"
     +   "<input type='checkbox' <% if(complete) print('checked') %>/>"
-    +   " <%= title %> "
+    +   " <%- title %> "
     + "</label>"),
   events: {
     "click input": "statusChanged"
@@ -111,7 +111,7 @@ todoApp.TodoListItem = Backbone.View.extend({
   }
 })
 
-/* 
+/*
  * Define a view for the list of all todos. We
  * watch for changes to the collection so we can
  * update the view appropriately.
