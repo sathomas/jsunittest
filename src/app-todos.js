@@ -1,21 +1,4 @@
 /*
- * Define our dependencies explicitly so we can run
- * tests either in the browser or via node.js command
- * line without having to add AMD support for the
- * browser version.
- *
- * The statements below are only required for node.js
- * testing (since node.js isn't as permissive with
- * respect to global variables). They don't do any
- * harm in the browser, though.
- */
-
-var jQuery   = jQuery   || require("jquery");
-var _        = _        || require("underscore");
-var Backbone = Backbone || require("backbone");
-Backbone.$   = jQuery;
-
-/*
  * To avoid conflicts with miscellaneous Javascript libraries
  * that might one day be part of the our pages, we put all of
  * our variables in their own name space. If that name space
@@ -41,7 +24,7 @@ if (typeof todoApp === "undefined") todoApp = {};
  * action supported in this demo is toggling the status
  * (e.g. from pending to complete or vice versa).
  */
- 
+
 todoApp.Todo = Backbone.Model.extend({
   defaults: {
     title:    "",
@@ -84,7 +67,7 @@ todoApp.Todos = Backbone.Collection.extend({
  * We also watch for changes in the model so we can
  * update (or remove) the view as needed.
  */
- 
+
 todoApp.TodoListItem = Backbone.View.extend({
   tagName: "li",
   template: _.template(

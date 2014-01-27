@@ -1,0 +1,44 @@
+{
+  "name": "jsunittest",
+  "version": "1.0.0",
+  "description": "Simple application to demonstrate JavaScript unit testing",
+  "main": "app-todos.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "backbone": ">=1.1.0",
+    "jquery": ">=2.1.0",
+    "underscore": ">=1.5.2"
+  },
+  "devDependencies": {
+    "chai": ">=1.8.1",
+    "jsdom": ">=0.8.11",
+    "mocha": ">=1.17.1",
+    "sinon": ">=1.7.3",
+    "sinon-chai": ">=2.4.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://sathomas@github.com/sathomas/jsunittest"
+  },
+  "keywords": [
+    "javascript",
+    "tdd",
+    "bdd"
+  ],
+  "author": {
+	"name": "Stephen Thomas",
+    "email": "stephen@sathomas.me",
+	"url": "http://sathomas.me"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sathomas/jsunittest/issues",
+	"email": "stephen@sathomas.me"
+  },
+  "homepage": "https://github.com/sathomas/jsunittest"
+}
