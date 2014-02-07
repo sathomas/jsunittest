@@ -12,6 +12,7 @@
     "underscore": ">=1.5.2"
   },
   "devDependencies": {
+    "blanket": ">=1.1.6",
     "chai": ">=1.8.1",
     "jsdom": ">=0.8.11",
     "mocha": ">=1.17.1",
@@ -20,6 +21,11 @@
   },
   "scripts": {
     "test": "mocha"
+  },
+  "config": {
+    "blanket": {
+      "pattern": "app-todos.js"
+    }
   },
   "repository": {
     "type": "git",
@@ -31,14 +37,14 @@
     "bdd"
   ],
   "author": {
-	"name": "Stephen Thomas",
+    "name": "Stephen Thomas",
     "email": "stephen@sathomas.me",
-	"url": "http://sathomas.me"
+    "url": "http://sathomas.me"
   },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/sathomas/jsunittest/issues",
-	"email": "stephen@sathomas.me"
+    "email": "stephen@sathomas.me"
   },
   "homepage": "https://github.com/sathomas/jsunittest"
 }
