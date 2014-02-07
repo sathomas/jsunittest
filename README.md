@@ -22,4 +22,5 @@ Here is what each folder and file contains:
   * `src/app-todos.js`: Our application.
 * `test/`: A folder for test code.
   * `test/app-todos-test.js`: Test code for our application.
+  * `test/blanket.mustache`: Test scaffolding file for custom blanket.js coverage results in Test'Em.
   * `test/mocha.opts`: Configuration options for mocha; we'll look at this in the next section.
