@@ -1,16 +1,12 @@
 {
  	"framework": "mocha",
-    "serve_files": [
+    "src_files": [
 	    "node_modules/jquery/dist/jquery.js",
 	    "node_modules/underscore/underscore.js",
 	    "node_modules/backbone/backbone.js",
 	    "node_modules/chai/chai.js",
 	    "node_modules/sinon/pkg/sinon.js",
 	    "node_modules/sinon-chai/lib/sinon-chai.js",
-	    "src/*.js",
-	    "test/*.js"
-	],
-    "src_files": [
         "src/*.js",
         "test/*.js"
 	]

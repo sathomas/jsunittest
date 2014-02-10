@@ -1,28 +1,24 @@
-/*
- * Sorry about the following, but we need to know if
- * we're running under node.js or in the browser. That
- * turns out to be really hard to determine reliably,
- * but the following code should work in all but the
- * really really extreme cases.
- */
+
+// Sorry about the following, but we need to know if
+// we're running under node.js or in the browser. That
+// turns out to be really hard to determine reliably,
+// but the following code should work in all but the
+// really really extreme cases.
 
 if (typeof exports !== 'undefined' && this.exports !== exports) {
 
-    /*
-     * Here's why the node.js environment needs special
-     * treatment:
-     *
-     *   -  Node.js doesn't have a DOM into which we
-     *      can insert our views to test interactions.
-     *      We can simulate a DOM with jsdom.
-     *
-     *   -  We need to identify dependencies so node.js
-     *      can load the necessary libraries. (In the
-     *      browser, these will be handled by explicit
-     *      includes, either of individual script files
-     *      or of concatenated, possibly minified versions.)
-     *
-     */
+    // Here's why the node.js environment needs special
+    // treatment:
+    //
+    //   -  Node.js doesn't have a DOM into which we
+    //      can insert our views to test interactions.
+    //      We can simulate a DOM with jsdom.
+    //
+    //   -  We need to identify dependencies so node.js
+    //      can load the necessary libraries. (In the
+    //      browser, these will be handled by explicit
+    //      includes, either of individual script files
+    //      or of concatenated, possibly minified versions.)
 
     var jsdom = require("jsdom").jsdom;
     var doc = jsdom("<html><body></body></html>");
@@ -184,17 +180,15 @@ describe("Todos List View", function() {
     })
 })
 
-/*
- * For extra credit, the following code can be used to
- * test interaction with a REST API. It's not really
- * appropriate for unit tests of the todos module
- * because it's actually testing the backbone library.
- *
- * You might need to mock a REST API if your server doesn't
- * provide the standard backbone responses (e.g. using
- * ._id instead of .id) and the model has to adjust for
- * that.
- */
+// For extra credit, the following code can be used to
+// test interaction with a REST API. It's not really
+// appropriate for unit tests of the todos module
+// because it's actually testing the backbone library.
+//
+// You might need to mock a REST API if your server doesn't
+// provide the standard backbone responses (e.g. using
+// ._id instead of .id) and the model has to adjust for
+// that.
 
 describe("Collection's Interaction with REST API", function() {
     it("should load using the API", function() {
